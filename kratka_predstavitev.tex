@@ -1,0 +1,67 @@
+  \documentclass[12pt,a4paper]{amsart}
+% ukazi za delo s slovenscino -- izberi kodiranje, ki ti ustreza
+\usepackage[slovene]{babel}
+%\usepackage[cp1250]{inputenc}
+%\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{url}
+%\usepackage[normalem]{ulem}
+\usepackage[dvipsnames,usenames]{color}
+
+
+\textwidth 15cm
+\textheight 24cm
+\oddsidemargin.5cm
+\evensidemargin.5cm
+\topmargin-5mm
+\addtolength{\footskip}{10pt}
+\overfullrule=15pt
+
+\begin{document}
+
+\begin{titlepage}
+	\begin{center}
+	\textsc{Univerza v Ljubljani\\
+		Fakulteta za matematiko in fiziko}\\
+	[7cm]
+	\huge{\bfseries $AZI$ in $AZI_{\alpha}$ mere} \\
+	\textsc{\normalsize{Nikolaj Candellari, Marija Janeva}}\\
+	[12,5cm]
+	\textsc{\large Ljubljana, 2019}
+	\end{center}
+\end{titlepage}
+
+\begin{flushleft}
+
+\section{\textbf{Navodilo naloge}}
+
+Povečani zagrebški indeks ali s kratico-$AZI$ grafa $G(V, E)$ z $n$ vozlišči je vrednost definirana kot:\\
+\[ AZI(G) = \sum_{v_{i}v_{j} \in E}[d_id_j/(d_i+d_j-2)]^3\]
+kjer je $V= \{v_0, v_1, \cdots, v_{n-1} \}, \quad n \ge 3$ in $d_i$ označuje stopnjo vozlišča $v_i$ grafa $G$. Kot varianta dobro poznane metode \textit{"atom-bond"} povezljivostnega indeksa se je $AZI$ izkazal kot najboljšega pri predvidevanju vrednosti mnogih fizikalno-kemijskih lastnosti na grafih, označenih s topološkimi indeksi po stopnji vozlišč. Pred kratim je bil rešen problem ekstremalnih vrednosti $AZI$ mere na drevesih z $n$ vozlišči. Dodajmo še, da $AZI_{\alpha}$ dobimo iz $AZI$ z zamenjavo kubiranja s potenciranjem na $\alpha$.\\
+Rešite nasledja problema: \\
+
+\begin{enumerate}
+\item{Med grafi s samo enim ciklom na $n$ vozliščih poiščite tiste, ki imajo minimalne in maksimalne $AZI$ vrednosti.}
+
+\item{Med drevesi na $n$ vozliščih poiščite tiste, ki imajo maksimalne in minimalne $AZI_{\alpha}$ vrednosti. Poskus izvajajte za različne vrednosti $\alpha$.}
+\end{enumerate} 
+
+\section{\textbf{Reševanje problema}}
+\subsection{1. problem}
+Reševanje tega dela naloge se bomo lotili z postavljanjem hipotez na enocikličnih grafih z malo vozlišči. Zdi se nam da bomo maksimalno vrednost $AZI$ dosegali na vsaj enem grafu.Eden od tistih bo graf, ki ima največji cikel (stopnje vseh vozlič so enake 2). Med vsemi drevesi ima graf v obliki zvezde minimalno $AZI$ vrednost. To bomo uporabili pri iskanju enocikličnih grafov z minimalno $AZI$ vrednostjo. To naredimo tako, da grafu zvezda dodamo en rob in dobimo enocikličen graf z n vozlišči. Se pravi, radi bi imeli čimveč vozlišč s stopnjo 1.
+ V SAGE-u bomo torej definirali funkcijo, ki bo znala zgenerirati vse enociklične grafe z $n$ vozlišči ter nato izračunala in primerjala vredosti med sabo.  
+
+\subsection{2. problem}
+V tem delu naloge se bomo osredotočili na drevesne grafe. Podobno kot v prvem delu naloge bomo tudi v tem delu postavljali hipoteze na grafih z malo vozlišč in z njihovo pomočjo ugotavljali na katerih grafih doseže $AZI_{\alpha}$ ekstremalni vrednosti. Vemo da je pri $\alpha = 0$ vrednost $AZI_{\alpha}$ na vseh drevesih enaka in je enaka  številu povezav grafa. Podobno vemo, da poznamo rešitev problema pri $\alpha =3$. Želeli si bomo ugotoviti ali obstaja kakšno splošno pravilo v odvisnosti od $\alpha$ za reševanje maksimalnega problema na grafih z $n$ vozlišči. Zanimalo nas bo tudi kako pri določenem številu oglišč sprememba vrednosti $\alpha$ vpliva na maksimalno in minimalno vrednost $AZI_{\alpha}$.
+
+\section{\textbf{Viri}}
+
+\begin{enumerate}
+
+\item{$https://www.researchgate.net/publication/336837572_Complete_Characterization_of_Trees_with_Maximal_Augmented_Zagreb_Index$}
+
+\end{enumerate}
+
+\end{flushleft}
+\end{document}
